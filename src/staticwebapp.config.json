@@ -6,24 +6,14 @@
       "allowedRoles": ["authenticated"]
     }
   ],
+  
   "auth": {
       "identityProviders": {
-        "customOpenIdConnectProviders": {
-          "aadb2c": {
-            "registration": {
-              "clientIdSettingName": "AADB2C_PROVIDER_CLIENT_ID",
-              "clientCredential": {
-                "clientSecretSettingName": "AADB2C_PROVIDER_CLIENT_SECRET"
-              },
-              "openIdConnectConfiguration": {
-                "wellKnownOpenIdConfiguration": "https://trialtenantwzmjkrki.ciamlogin.com/TrialTenantwZmJkrkI.onmicrosoft.com/v2.0/.well-known/openid-configuration"
-              }
-            },
-            "login": {
-              "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-              "scopes": [],
-              "loginParameterNames": []
-            }
+        "azureActiveDirectory": {
+          "registration": {
+            "openIdIssuer": "https://login.microsoftonline.com/f8dcbffb-c332-45c5-bd3b-967afcf853c6/v2.0",
+            "clientIdSettingName": "AZURE_CLIENT_ID",
+            "clientSecretSettingName": "AZURE_CLIENT_SECRET_APP_SETTING_NAME"
           }
         }
       }
