@@ -13,11 +13,8 @@ function obtainTokenForApi(){
         // Acquire token silent success
         let accessToken = accessTokenResponse.accessToken;
 
-        // set access token into tokenApiResponse id element
-        document.getElementById('tokenApiResponse').innerText = accessToken;
-
         // Call your API with token
-        //callApi(accessToken);
+        callGraphFromFE(accessToken);
     })
     .catch(function (error) {
         document.getElementById('tokenApiResponse').innerText = error;
@@ -39,4 +36,24 @@ function obtainTokenForApi(){
         //}
         console.log(error);
     });
+}
+
+function callGraphFromFE(token){
+    // Call the function to obtain an access token
+    document.getElementById('FieldTokenTable').innerText = accessToken;
+
+    // Call the graph API /me endpoint
+    fetch('https://graph.microsoft.com/v1.0/me', {
+    headers: {
+        Authorization: 'Bearer ' + token
+    },
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('FieldResponseTable').innerText = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+        document.getElementById('FieldResponseTable').innerText = error;
+    });
+
 }
