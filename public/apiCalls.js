@@ -1,3 +1,5 @@
+const apiKey = '8cf31e960db440cabd67b5b9dd13418a';
+
 function obtainTokenForGraph(){
     // MSAL.js v2 exposes several account APIs, logic to determine which account to use is the responsibility of the developer
     const account = myMSALObj.getAllAccounts()[0];
@@ -78,7 +80,8 @@ function callBeFromFE(accessToken){
     fetch('https://webapistaticapp.azure-api.net/iam', {
         method: 'POST',
         headers: {
-            Authorization: 'Bearer ' + accessToken
+            "Authorization": 'Bearer ' + accessToken,
+            "Ocp-Apim-Subscription-Key": apiKey
         },
         body: JSON.stringify({
             "response": "This is a response from the backend API"
