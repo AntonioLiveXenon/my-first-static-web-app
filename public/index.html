@@ -25,7 +25,8 @@
         </div>
     </nav>
     <br />
-    <button type="button" id="tokenApi" onclick="obtainTokenForApi()">Chiama Graph</button>
+    <h5 id="tokenGraph">Graph Test From FE</h5>
+    <button type="button" id="goGraphCall" onclick="obtainTokenForApi()">Chiama Graph</button>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -35,8 +36,24 @@
         </thead>
         <tbody>
             <tr>
-                <td id="FieldTokenTable"></td>
-                <td id="FieldResponseTable"></td>
+                <td id="FieldTableGraphToken"></td>
+                <td id="FieldTableGraphResponse"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h5 id="tokenGraph">Backend Test From FE</h5>
+    <button type="button" id="goApiGtwCall" onclick="obtainTokenForApi()">Chiama il Backend</button>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Token</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="FieldTableBeToken"></td>
+                <td id="FieldTableBeResponse"></td>
             </tr>
         </tbody>
     </table>
