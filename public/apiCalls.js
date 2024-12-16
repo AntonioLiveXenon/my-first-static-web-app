@@ -71,7 +71,7 @@ function obtainTokenForBackend(){
 
 function callBeFromFE(accessToken){
     // Call the function to obtain an access token
-    document.getElementById('FieldTableGraphToken').innerText = accessToken;
+    document.getElementById('FieldTableBeToken').innerText = accessToken;
 
     // Call the backend API /iam endpoint as post
     
