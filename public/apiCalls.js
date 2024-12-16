@@ -3,7 +3,7 @@ function obtainTokenForApi(){
     const account = myMSALObj.getAllAccounts()[0];
 
     const accessTokenRequest = {
-    scopes: ["user.read"],
+    scopes: ["user.read", "api://2f2359cc-9457-4ae7-8412-4bad2d598214/AuthenticatedUser"],
     account: account,
     };
 
