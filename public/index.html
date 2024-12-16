@@ -25,7 +25,21 @@
         </div>
     </nav>
     <br />
-    <button type="button" id="tokenApi" onclick="obtainTokenForApi()">Ottieni Token Api</button>
+    <button type="button" id="tokenApi" onclick="obtainTokenForApi()">Chiama Graph</button>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Token</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="FieldTokenTable"></td>
+                <td id="FieldResponseTable"></td>
+            </tr>
+        </tbody>
+    </table>
     <h5 id="tokenApiResponse"></h5>
     <div class="container">
             <div class="row">
