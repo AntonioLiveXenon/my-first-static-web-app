@@ -18,12 +18,12 @@ app.use(express.static(path.join(__dirname, "node_modules/@azure/msal-browser/li
 
 // set up a route for signout.html
 app.get('/signout', (req, res) => {
-    res.sendFile(path.join(__dirname + '/src/signout.html'));
+    res.sendFile(path.join(__dirname + '/public/signout.html'));
 });
 
 // set up a route for redirect.html
 app.get('/redirect', (req, res) => {
-    res.sendFile(path.join(__dirname + '/src/redirect.html'));
+    res.sendFile(path.join(__dirname + '/public/redirect.html'));
 });
 
 // set up a route for index.html
