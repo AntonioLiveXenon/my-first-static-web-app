@@ -19,33 +19,18 @@ function obtainTokenForApi(){
     .catch(function (error) {
         document.getElementById('FieldResponseTable').innerText = error;
 
-        //Acquire token silent failure, and send an interactive request
-        //if (error instanceof InteractionRequiredAuthError) {
-        //    myMSALObj
-        //    .acquireTokenPopup(accessTokenRequest)
-        //    .then(function (accessTokenResponse) {
-        //    // Acquire token interactive success
-        //    let accessToken = accessTokenResponse.accessToken;
-        //    // Call your API with token
-        //    callApi(accessToken);
-        //    })
-        //    .catch(function (error) {
-        //    // Acquire token interactive failure
-        //    console.log(error);
-        //    });
-        //}
         console.log(error);
     });
 }
 
-function callGraphFromFE(token){
+function callGraphFromFE(accessToken){
     // Call the function to obtain an access token
     document.getElementById('FieldTokenTable').innerText = accessToken;
 
     // Call the graph API /me endpoint
     fetch('https://graph.microsoft.com/v1.0/me', {
     headers: {
-        Authorization: 'Bearer ' + token
+        Authorization: 'Bearer ' + accessToken
     },
     })
     .then(response => response.json())
