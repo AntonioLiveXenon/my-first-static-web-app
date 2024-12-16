@@ -17,7 +17,7 @@ function obtainTokenForApi(){
         callGraphFromFE(accessToken);
     })
     .catch(function (error) {
-        document.getElementById('tokenApiResponse').innerText = error;
+        document.getElementById('FieldResponseTable').innerText = error;
 
         //Acquire token silent failure, and send an interactive request
         //if (error instanceof InteractionRequiredAuthError) {
