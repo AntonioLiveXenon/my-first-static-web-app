@@ -51,7 +51,7 @@ function obtainTokenForBackend(){
     const account = myMSALObj.getAllAccounts()[0];
 
     const accessTokenRequest = {
-    scopes: ["api://72a858aa-400f-4f5c-994b-c917d90eb12f/AuthenticatedUser"],
+    scopes: ["api://2f2359cc-9457-4ae7-8412-4bad2d598214/AuthenticatedUser"],
     account: account,
     };
 
